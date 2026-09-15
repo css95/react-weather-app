@@ -18,13 +18,14 @@ export async function getWeather(cityName) {
                 current:'temperature_2m,weather_code,wind_speed_10m',
                 daily: 'temperature_2m_max,temperature_2m_min',
                 timezone: 'auto'
-             }
+            }
         })
         console.log(weatherResponse.data)
         return weatherResponse.data
 
     } catch (error) {
         console.error(error);
+        throw error;
     }
 }
 
