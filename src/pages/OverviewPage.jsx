@@ -1,12 +1,17 @@
-import { useEffect } from 'react';
-import { getWeather } from '../api/weather'; // adjust path to wherever you put it
+import { useWeather } from '../hooks/useWeather';
 
 function OverviewPage() {
-  useEffect(() => {
-    getWeather('stockholm');
-  }, []);
+    const { weatherData, loading, error } = useWeather('stockholm')
 
-  return <h1>Weather Today</h1>;
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>A network error was encountered</p>
+
+    return (
+        <>
+            {JSON.stringify(weatherData)}
+        </>
+    )
+
 }
 
 export default OverviewPage
