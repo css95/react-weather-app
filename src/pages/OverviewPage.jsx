@@ -1,4 +1,5 @@
 import { useWeather } from '../hooks/useWeather';
+import SearchForm from '../components/SearchForm';
 
 function OverviewPage() {
     const { weatherData, loading, error } = useWeather('stockholm')
@@ -8,6 +9,7 @@ function OverviewPage() {
 
     return (
         <>
+            <SearchForm />
             {JSON.stringify(weatherData)}
         </>
     )
