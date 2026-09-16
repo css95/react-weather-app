@@ -1,11 +1,15 @@
-import axios from "axios";
+import axios from "axios"
 
 export async function getWeather(cityName) {
     try {
         const geoResponse = await axios.get('https://geocoding-api.open-meteo.com/v1/search', {
             params: { name: cityName }
-        });
-        console.log(geoResponse.data);
+        })
+        console.log(geoResponse.data)
+
+        if (!geoResponse.data.results || geoResponse.data.results.length === 0) {
+            throw new Error('CITY_NOT_FOUND')
+        }
 
         const { latitude, longitude } = geoResponse.data.results[0]
         console.log(latitude)
@@ -24,8 +28,8 @@ export async function getWeather(cityName) {
         return weatherResponse.data
 
     } catch (error) {
-        console.error(error);
-        throw error;
+        console.error(error)
+        throw error
     }
 }
 
