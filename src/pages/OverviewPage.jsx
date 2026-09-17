@@ -1,7 +1,9 @@
 import { useWeather } from '../hooks/useWeather';
+import WeatherCard from '../components/WeatherCard';
 
 function OverviewPage() {
-    const { weatherData, loading, error } = useWeather('stockholm')
+
+    const { weatherData, loading, error } = useWeather('stockholm');
 
     if (loading) return <p>Loading...</p>
     if (error) {
@@ -12,9 +14,18 @@ function OverviewPage() {
         }
     }
 
+    const { cityName, weather } = weatherData;
+    const { temperature_2m  } = weather.current;
+
+
     return (
         <>
-            {JSON.stringify(weatherData)}
+            <WeatherCard 
+            cityName={cityName} 
+            icon=""
+            temperature={temperature_2m}
+            description="TODO"
+            />
         </>
     )
 

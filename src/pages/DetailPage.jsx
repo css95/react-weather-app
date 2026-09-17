@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom"
 import { useWeather } from "../hooks/useWeather";
+import WeatherCard from "../components/WeatherCard";
 
 function DetailPage() {
     
-    const { cityName } = useParams();
-    const { weatherData, loading, error } = useWeather(cityName)
+    const { citySearch } = useParams();
+    const { weatherData, loading, error } = useWeather(citySearch)
 
     if (loading) return <p>Loading...</p>
     if (error) {
@@ -15,9 +16,20 @@ function DetailPage() {
         }
     }
 
+    const { cityName, weather } = weatherData;
+    const { temperature_2m, wind_speed_10m, relative_humidity_2m, apparent_temperature  } = weather.current;
+
     return (
         <>
-            {JSON.stringify(weatherData)}
+            <WeatherCard 
+            cityName={cityName} 
+            icon=""
+            temperature={temperature_2m}
+            description="TODO"
+            wind={wind_speed_10m}
+            humidity={relative_humidity_2m}
+            feelsLike={apparent_temperature}
+            />
         </>
     )
 
