@@ -1,6 +1,7 @@
 import { useWeather } from '../hooks/useWeather';
 import WeatherCard from '../components/WeatherCard';
 import { getWeatherInfo } from '../utils/weatherCodes';
+import { getForecastDays } from '../utils/forecastList';
 
 function OverviewPage() {
 
@@ -16,6 +17,7 @@ function OverviewPage() {
     };
 
     const { cityName, weather } = weatherData;
+    console.log(getForecastDays(weather.daily));
     const { temperature_2m  } = weather.current;
     const weatherInfo = getWeatherInfo(weather.current.weather_code);
 
