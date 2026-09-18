@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom"
 import { useWeather } from "../hooks/useWeather";
 import WeatherCard from "../components/WeatherCard";
+import { getWeatherInfo } from "../utils/weatherCodes";
 
 function DetailPage() {
     
     const { citySearch } = useParams();
-    const { weatherData, loading, error } = useWeather(citySearch)
+    const { weatherData, loading, error } = useWeather(citySearch);
 
     if (loading) return <p>Loading...</p>
     if (error) {
@@ -14,18 +15,19 @@ function DetailPage() {
         } else {
         return <p>A network error was encountered</p>
         }
-    }
+    };
 
     const { cityName, weather } = weatherData;
     const { temperature_2m, wind_speed_10m, relative_humidity_2m, apparent_temperature  } = weather.current;
+    const weatherInfo = getWeatherInfo(weather.current.weather_code);
 
     return (
         <>
             <WeatherCard 
             cityName={cityName} 
-            icon=""
+            icon={weatherInfo.icon}
             temperature={temperature_2m}
-            description="TODO"
+            description={weatherInfo.description}
             wind={wind_speed_10m}
             humidity={relative_humidity_2m}
             feelsLike={apparent_temperature}
@@ -33,6 +35,6 @@ function DetailPage() {
         </>
     )
 
-}
+};
 
 export default DetailPage

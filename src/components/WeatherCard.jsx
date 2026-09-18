@@ -5,8 +5,8 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
         <div className="weather-card">
             <h1>{cityName}</h1>
             <div className="weather-main">
-                <img src={icon} alt={description} />
-                <h2>{temperature}</h2>
+                <span className="weather-icon">{icon}</span>
+                <h2>{temperature}°</h2>
             </div>
             <p>{description}</p>
             <div className="weather-stats">
