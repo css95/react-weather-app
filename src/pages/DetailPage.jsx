@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom"
 import { useWeather } from "../hooks/useWeather";
 import WeatherCard from "../components/WeatherCard";
 import { getWeatherInfo } from "../utils/weatherCodes";
+import { getForecastDays } from "../utils/forecastDays";
+import ForecastList from "../components/ForecastList";
+
 
 function DetailPage() {
     
@@ -20,6 +23,7 @@ function DetailPage() {
     const { cityName, weather } = weatherData;
     const { temperature_2m, wind_speed_10m, relative_humidity_2m, apparent_temperature  } = weather.current;
     const weatherInfo = getWeatherInfo(weather.current.weather_code);
+    const forecastDays = getForecastDays(weather.daily);
 
     return (
         <>
@@ -32,6 +36,7 @@ function DetailPage() {
             humidity={relative_humidity_2m}
             feelsLike={apparent_temperature}
             />
+            <ForecastList days={forecastDays} />
         </>
     )
 
