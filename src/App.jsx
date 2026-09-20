@@ -3,7 +3,6 @@ import Layout from './layout/Layout'
 import OverviewPage from './pages/OverviewPage'
 import DetailPage from './pages/DetailPage'
 import ErrorPage from './pages/ErrorPage'
-import './App.css'
 
 function App() {
 

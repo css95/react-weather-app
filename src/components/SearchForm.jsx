@@ -23,14 +23,14 @@ function SearchForm() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label> 
-                    Enter City Name
-                    <input 
-                        value={citySearch}
-                        onChange={e => setCitySearch(e.target.value)}
-                    />
-                    <button type="submit">Search</button>
-                </label>
+                <input
+                    aria-label="City name"
+                    placeholder="Search for a city"
+                    value={citySearch}
+                    onChange={e => setCitySearch(e.target.value)}
+                />
+                <button type="submit">Search</button>
+                {validationError && <p>{validationError}</p>}
             </form>   
         </>
 
