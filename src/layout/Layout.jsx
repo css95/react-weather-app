@@ -6,11 +6,11 @@ import styles from './Layout.module.css';
 function Layout() {
     return (
         <div className={styles.app}>
-            <header className={styles.app}>
-                <Link to="/">Weather Today</Link>
+            <header className={styles.header}>
+                <Link className={styles.title} to="/">Weather Today</Link>
                 <SearchForm />
             </header>
-            <main className={styles.app}>
+            <main className={styles.main}>
                 <Outlet />
             </main>
             <FavoritesList />

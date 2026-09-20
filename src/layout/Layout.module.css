@@ -2,15 +2,29 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: var(--color-background);
+    background: linear-gradient(180deg, #4a90d9 0%, #a8d0f0 100%);
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
-    padding: var(--spacing-md);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: transparent;
 }
 
 .main {
     flex: 1;
+}
+
+.title {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+}
+
+.title:visited {
+    color: var(--color-text-light);
 }
