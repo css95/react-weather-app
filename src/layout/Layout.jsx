@@ -1,5 +1,6 @@
 import { Outlet, Link } from 'react-router-dom';
 import SearchForm from '../components/SearchForm';
+import FavoritesList from '../components/FavoritesList';
 
 function Layout() {
     return (
@@ -11,6 +12,7 @@ function Layout() {
             <main>
                 <Outlet />
             </main>
+            <FavoritesList />
         </div>
     );
 }
