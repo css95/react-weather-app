@@ -1,7 +1,6 @@
 import { useWeather } from '../hooks/useWeather';
-import WeatherCard from '../components/WeatherCard';
+import WeatherSummary from '../components/WeatherSummary';
 import { getWeatherInfo } from '../utils/weatherCodes';
-import { getForecastDays } from '../utils/forecastDays';
 
 function OverviewPage() {
 
@@ -17,20 +16,16 @@ function OverviewPage() {
     };
 
     const { cityName, weather } = weatherData;
-    const { temperature_2m, wind_speed_10m, relative_humidity_2m, apparent_temperature  } = weather.current;
+    const { temperature_2m } = weather.current;
     const weatherInfo = getWeatherInfo(weather.current.weather_code);
 
 
     return (
         <>
-            <WeatherCard 
-            cityName={cityName} 
-            icon={weatherInfo.icon}
-            temperature={temperature_2m}
-            description={weatherInfo.description}
-            wind={wind_speed_10m}
-            humidity={relative_humidity_2m}
-            feelsLike={apparent_temperature}
+            <WeatherSummary
+                cityName={cityName}
+                icon={weatherInfo.icon}
+                temperature={temperature_2m}
             />
         </>
     )
