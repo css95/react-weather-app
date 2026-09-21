@@ -33,3 +33,21 @@ export async function getWeather(searchTerm) {
     }
 }
 
+export async function getWeatherByCoords(latitude, longitude) {
+    try {
+        const weatherResponse = await axios.get('https://api.open-meteo.com/v1/forecast', {
+            params: {
+                latitude,
+                longitude,
+                current:'temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature',
+                daily: 'temperature_2m_max,temperature_2m_min',
+                timezone: 'auto'
+            }
+
+        })
+        return { cityName: 'Your location', weather: weatherResponse.data }
+    } catch(error) {
+        console.error(error)
+        throw error
+    }
+}

@@ -1,10 +1,11 @@
 import { useWeather } from '../hooks/useWeather';
 import WeatherSummary from '../components/WeatherSummary';
 import { getWeatherInfo } from '../utils/weatherCodes';
+import { useLocationWeather } from '../hooks/useLocationWeather';
 
 function OverviewPage() {
 
-    const { weatherData, loading, error } = useWeather('stockholm');
+    const { weatherData, loading, error } = useLocationWeather();
 
     if (loading) return <p>Loading...</p>;
     if (error) {
