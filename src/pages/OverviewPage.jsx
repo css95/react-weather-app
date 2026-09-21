@@ -17,7 +17,7 @@ function OverviewPage() {
     };
 
     const { cityName, weather } = weatherData;
-    const { temperature_2m  } = weather.current;
+    const { temperature_2m, wind_speed_10m, relative_humidity_2m, apparent_temperature  } = weather.current;
     const weatherInfo = getWeatherInfo(weather.current.weather_code);
 
 
@@ -28,6 +28,9 @@ function OverviewPage() {
             icon={weatherInfo.icon}
             temperature={temperature_2m}
             description={weatherInfo.description}
+            wind={wind_speed_10m}
+            humidity={relative_humidity_2m}
+            feelsLike={apparent_temperature}
             />
         </>
     )

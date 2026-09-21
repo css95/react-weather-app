@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
 import { useNavigate } from "react-router-dom";
+import styles from './FavoritesList.module.css';
 
 function FavoritesList () {
 
@@ -9,15 +10,19 @@ function FavoritesList () {
 
 
     return (
-        <div className="favorites-list">
-            <h2>Saved cities</h2>
-            {favorites.map(favorite => {
-            return (
-                <button key={favorite.id} onClick={() => navigate(`/city/${favorite.city.toLowerCase()}`)}>
-                    {favorite.city}
-                </button>
-            )
-            })}
+        <div className={styles.favoritesList}>
+            <h2 className={styles.heading}>Saved cities</h2>
+            <div className={styles.chipRow}>
+                {favorites.map(favorite => {
+                    return (
+                        <button key={favorite.id} className={styles.chip} onClick={() => navigate(`/city/${favorite.city.toLowerCase()}`)}>
+                            {favorite.city}
+                        </button>
+                    )
+                })}
+
+            </div>
+
         </div>
     )
     

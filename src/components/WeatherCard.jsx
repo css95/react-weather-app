@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
+import styles from './WeatherCard.module.css';
+
 
 function WeatherCard({ cityName, icon, temperature, description, wind, humidity, feelsLike }) {
 
@@ -17,20 +19,31 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
     }
 
     return (
-        <div className="weather-card">
-            <h1>{cityName}</h1>
-            <button onClick={handleFavoriteClick}>
-                {isFavorite ? '❤️' : '🤍'}
-            </button>
-            <div className="weather-main">
-                <span className="weather-icon">{icon}</span>
-                <h2>{temperature}°</h2>
+        <div className={styles.weatherCard}>
+            <div className={styles.titleRow}>
+                <h1>{cityName}</h1>
+                <button className={styles.favoriteButton} onClick={handleFavoriteClick}>
+                    {isFavorite ? '❤️' : '🤍'}
+                </button>
+            </div>
+            <div className={styles.weatherMain}>
+                <span className={styles.icon}>{icon}</span>
+                <h2 className={styles.temperature}>{temperature}°</h2>
             </div>
             <p>{description}</p>
-            <div className="weather-stats">
-                <p>{wind}</p>
-                <p>{humidity}</p>
-                <p>{feelsLike}</p>
+            <div className={styles.weatherStats}>
+                <div className={styles.stat}>
+                    <span className={styles.statLabel}>Wind</span>
+                    <span className={styles.statValue}>{wind}</span>
+                </div>
+                <div className={styles.stat}>
+                    <span className={styles.statLabel}>Humidity</span>
+                    <span className={styles.statValue}>{humidity}</span>
+                </div>
+                <div className={styles.stat}>
+                    <span className={styles.statLabel}>Feels like</span>
+                    <span className={styles.statValue}>{feelsLike}°</span>
+                </div>
             </div>
         </div>
     )

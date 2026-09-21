@@ -1,10 +1,17 @@
+import styles from './ForecastList.module.css';
+
 function ForecastList({ days }) {
 
     return (
-        <div className="forecast-list">
-            <ul>
+        <div>
+            <ul className={styles.forecastList}>
                 {days.map(day => {
-                    return <li key={day.date}>{day.date} {day.max} {day.min}</li>})}
+                    const dayLabel = new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })
+                    return (
+                    <li key={day.date} className={styles.forecastDay}>{dayLabel} {day.max}°/{day.min}°</li>
+                    )
+                    
+                })}
             </ul>
 
         </div>
