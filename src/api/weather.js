@@ -20,7 +20,7 @@ export async function getWeather(searchTerm) {
                 latitude, 
                 longitude, 
                 current:'temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature',
-                daily: 'temperature_2m_max,temperature_2m_min',
+                daily: 'temperature_2m_max,temperature_2m_min,weather_code',
                 timezone: 'auto'
             }
         })
@@ -40,7 +40,7 @@ export async function getWeatherByCoords(latitude, longitude) {
                 latitude,
                 longitude,
                 current:'temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature',
-                daily: 'temperature_2m_max,temperature_2m_min',
+                daily: 'temperature_2m_max,temperature_2m_min,weather_code',
                 timezone: 'auto'
             }
 

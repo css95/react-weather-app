@@ -3,7 +3,8 @@ export function getForecastDays(daily) {
         return {
             date: date,
             max: daily.temperature_2m_max[i],
-            min: daily.temperature_2m_min[i]
+            min: daily.temperature_2m_min[i],
+            code: daily.weather_code[i]
         }
     })
 
