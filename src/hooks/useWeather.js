@@ -3,9 +3,9 @@ import { getWeather } from '../api/weather'
 
 export function useWeather(cityName) {
 
-    const [weatherData, setWeatherData] = useState(null)
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [weatherData, setWeatherData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true)
@@ -17,6 +17,6 @@ export function useWeather(cityName) {
 
     }, [cityName]);
 
-    return { weatherData, loading, error }
+    return { weatherData, loading, error };
 
 }

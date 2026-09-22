@@ -60,3 +60,13 @@
     font-size: 1rem;
     font-weight: 600;
 }
+
+@media (min-width: 768px) {
+    .icon {
+        font-size: 6rem;
+    }
+
+    .temperature {
+        font-size: 5rem;
+    }
+}

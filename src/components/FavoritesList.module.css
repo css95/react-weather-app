@@ -1,5 +1,8 @@
 .favoritesList {
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .heading {
@@ -12,6 +15,7 @@
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .chip {
@@ -22,4 +26,19 @@
     color: var(--color-text-on-dark);
     cursor: pointer;
     font-size: var(--font-size-base);
+}
+
+@media (min-width: 768px) {
+    .favoritesList {
+        padding-top: var(--spacing-lg);
+    }
+
+    .heading {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .chipRow {
+        gap: var(--spacing-lg);
+    }
 }
