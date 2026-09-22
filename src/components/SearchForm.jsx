@@ -12,6 +12,7 @@ function SearchForm() {
 
     useEffect(() => {
         setCitySearch('');
+        setValidationError('');
     }, [location]);
 
     function handleSubmit(e) {
@@ -29,19 +30,21 @@ function SearchForm() {
     return (
         <>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <input 
-                    className={styles.input}
-                    aria-label="City name"
-                    placeholder="Search for a city"
-                    value={citySearch}
-                    onChange={e => {
-                        setCitySearch(e.target.value);
-                        setValidationError('');
-                    }}
-                />
-                <button className={styles.button} type="submit">Search</button>
-                {validationError && <p>{validationError}</p>}
-            </form>   
+                <div className={styles.inputRow}>
+                    <input 
+                        className={styles.input}
+                        aria-label="City name"
+                        placeholder="Search for a city"
+                        value={citySearch}
+                        onChange={e => {
+                            setCitySearch(e.target.value);
+                            setValidationError('');
+                        }}
+                    />
+                    <button className={styles.button} type="submit">Search</button>
+                </div>
+            </form>
+            {validationError && <p className={styles.error}>{validationError}</p>}
         </>
 
     )
