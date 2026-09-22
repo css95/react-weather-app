@@ -22,9 +22,7 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
         <div className={styles.weatherCard}>
             <div className={styles.titleRow}>
                 <h1>{cityName}</h1>
-                <button className={styles.favoriteButton} onClick={handleFavoriteClick}>
-                    {isFavorite ? '❤️' : '🤍'}
-                </button>
+                {isFavorite && <span className={styles.favoriteBadge}>❤️</span>}
             </div>
             <div className={styles.weatherMain}>
                 <span className={styles.icon}>{icon}</span>
@@ -45,6 +43,12 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
                     <span className={styles.statValue}>{feelsLike}°</span>
                 </div>
             </div>
+            <button 
+                className={isFavorite ? styles.favoriteToggleActive : styles.favoriteToggle}
+                onClick={handleFavoriteClick}
+                >
+                {isFavorite ? 'Remove from favorites' : '❤️ Add to favorites'}
+            </button>
         </div>
     )
 
