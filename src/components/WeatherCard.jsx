@@ -21,7 +21,7 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
     return (
         <div className={styles.weatherCard}>
             <div className={styles.titleRow}>
-                <h1>{cityName}</h1>
+                <h1 className={styles.title}>{cityName}</h1>
                 {isFavorite && <span className={styles.favoriteBadge}>❤️</span>}
             </div>
             <div className={styles.weatherMain}>

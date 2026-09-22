@@ -13,6 +13,11 @@
     gap: var(--spacing-sm);
 }
 
+.title {
+    color: var(--color-text);
+    font-size: var(--font-size-xl);
+}
+
 .favoriteButton {
     background: transparent;
     border: none;

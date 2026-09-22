@@ -8,8 +8,7 @@
 
 .title {
     color: var(--color-text);
-    font-size: var(--font-size-lg);
-    text-align: center;
+    font-size: var(--font-size-xl);
 }
 
 .weatherSummary {
