@@ -32,21 +32,18 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
             <div className={styles.weatherStats}>
                 <div className={styles.stat}>
                     <span className={styles.statLabel}>Wind</span>
-                    <span className={styles.statValue}>{wind}</span>
+                    <span className={styles.statValue}>{wind} km/h</span>
                 </div>
                 <div className={styles.stat}>
                     <span className={styles.statLabel}>Humidity</span>
-                    <span className={styles.statValue}>{humidity}</span>
+                    <span className={styles.statValue}>{humidity}%</span>
                 </div>
                 <div className={styles.stat}>
                     <span className={styles.statLabel}>Feels like</span>
                     <span className={styles.statValue}>{feelsLike}°</span>
                 </div>
             </div>
-            <button 
-                className={isFavorite ? styles.favoriteToggleActive : styles.favoriteToggle}
-                onClick={handleFavoriteClick}
-                >
+            <button className={styles.favoriteToggle} onClick={handleFavoriteClick}>
                 {isFavorite ? 'Remove from favorites' : '❤️ Add to favorites'}
             </button>
         </div>
