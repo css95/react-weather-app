@@ -8,8 +8,8 @@ A mobile-first weather app built with React, letting users search for any city's
 
 ## Screenshots
 
-<img src="./screenshots/react-weather-app_mobile.png" alt="Mobile view" width="300"><img src="./screenshots/react-weather-app_mobile_2.png" alt="Mobile view" width="300">
-<img src="./screenshots/react-weather-app_desktop.png" alt="Desktop view" width="600">
+<img src="./screenshots/weather_mobile_1.png" alt="Mobile view" width="300" style="margin-right: 16px;"><img src="./screenshots/weather_mobile_2.png" alt="Mobile view" width="300">
+<img src="./screenshots/weather_desktop.png" alt="Desktop view" width="600">
 
 ## Features
 
