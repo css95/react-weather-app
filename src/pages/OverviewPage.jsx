@@ -1,4 +1,3 @@
-import { useWeather } from '../hooks/useWeather';
 import WeatherSummary from '../components/WeatherSummary';
 import { getWeatherInfo } from '../utils/weatherCodes';
 import { useLocationWeather } from '../hooks/useLocationWeather';
