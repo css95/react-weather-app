@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from './SearchForm.module.css';
 
 function SearchForm() {
@@ -8,6 +8,11 @@ function SearchForm() {
     const [validationError, setValidationError] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        setCitySearch('');
+    }, [location]);
 
     function handleSubmit(e) {
         e.preventDefault();
