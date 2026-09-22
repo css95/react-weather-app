@@ -6,12 +6,12 @@ function OverviewPage() {
 
     const { weatherData, loading, error } = useLocationWeather();
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className="statusMessage">Loading...</p>;
     if (error) {
         if (error.message === 'CITY_NOT_FOUND') {
-            return <p>No results found for that city.</p>
+            return <p className="statusMessage">No results found for that city.</p>
         } else {
-        return <p>A network error was encountered</p>
+        return <p className="statusMessage">A network error was encountered</p>
         }
     };
 
