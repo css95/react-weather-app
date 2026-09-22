@@ -57,3 +57,24 @@ npm install
 npm run dev
 ```
 4. Open the local URL shown in your terminal (typically http://localhost:5173)
+
+## Requirements Met
+
+### Godkänd (G)
+
+- [x] 5+ components with single responsibility, organized folder structure (`components/`, `pages/`, `hooks/`, `api/`, `utils/`, `context/`, `layout/`)
+- [x] Routing between two views (overview and detail) via React Router, no full page reload
+- [x] Shared state via Context (favorites), used across multiple components
+- [x] API integration (Open-Meteo) with loading and error handling
+- [x] Form with validation (city search), with clear feedback on invalid/empty input
+- [x] Persistence via localStorage (favorites), including error handling for corrupted/missing data
+- [x] Consistent naming and formatting, no unused variables or console.logs
+- [x] Committed to Git with an incremental commit history
+
+### Väl Godkänd (VG)
+
+- [x] **Extended error handling**: distinct empty states ("no results found", "no saved cities yet") separate from generic network error handling
+- [x] **Thought-out component architecture**: custom hooks (`useWeather`, `useLocationWeather`) separate data-fetching from presentation; reusable components (`WeatherCard`, `WeatherSummary`, `ForecastList`)
+- [x] **Responsive design**: built mobile-first, with desktop breakpoints adjusting layout, spacing, and sizing
+- [x] **Extended functionality relevant to the app idea**: saved favorite cities, geolocation-based weather with fallback, 7-day forecast
+- [x] **Ongoing, descriptive commit history** throughout development, not only at the end
