@@ -12,7 +12,10 @@ function FavoritesList () {
     return (
         <div className={styles.favoritesList}>
             <h2 className={styles.heading}>Saved cities</h2>
-            <div className={styles.chipRow}>
+            {favorites.length === 0 ? (
+                <p className={styles.emptyState}>No saved cities yet</p>
+            ) : (
+                <div className={styles.chipRow}>
                 {favorites.map(favorite => {
                     return (
                         <button key={favorite.id} className={styles.chip} onClick={() => navigate(`/city/${favorite.city.toLowerCase()}`)}>
@@ -21,8 +24,8 @@ function FavoritesList () {
                     )
                 })}
 
-            </div>
-
+                </div>
+            )}
         </div>
     )
     

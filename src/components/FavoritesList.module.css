@@ -28,6 +28,12 @@
     font-size: var(--font-size-base);
 }
 
+.emptyState {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: var(--font-size-base);
+}
+
 @media (min-width: 768px) {
     .favoritesList {
         padding-top: var(--spacing-lg);
