@@ -6,6 +6,11 @@ A mobile-first weather app built with React, letting users search for any city's
 
 [https://react-weather-app-jet-pi.vercel.app](https://react-weather-app-jet-pi.vercel.app)
 
+## Screenshots
+
+<img src="./screenshots/react-weather-app_mobile.png" alt="Mobile view" width="300">
+<img src="./screenshots/react-weather-app_desktop.png" alt="Desktop view" width="600">
+
 ## Features
 
 - Search for any city's current weather and 7-day forecast
@@ -51,4 +56,4 @@ npm install
 ```
 npm run dev
 ```
-4. Open the local URL shown in your terminal(typically http://localhost:5173)
+4. Open the local URL shown in your terminal (typically http://localhost:5173)
