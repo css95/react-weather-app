@@ -18,7 +18,8 @@ export async function getWeather(searchTerm) {
                 longitude, 
                 current:'temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature',
                 daily: 'temperature_2m_max,temperature_2m_min,weather_code',
-                timezone: 'auto'
+                timezone: 'auto',
+                wind_speed_unit: 'ms'
             }
         })
 

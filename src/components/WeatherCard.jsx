@@ -32,7 +32,7 @@ function WeatherCard({ cityName, icon, temperature, description, wind, humidity,
             <div className={styles.weatherStats}>
                 <div className={styles.stat}>
                     <span className={styles.statLabel}>Wind</span>
-                    <span className={styles.statValue}>{wind} km/h</span>
+                    <span className={styles.statValue}>{wind} m/s</span>
                 </div>
                 <div className={styles.stat}>
                     <span className={styles.statLabel}>Humidity</span>
